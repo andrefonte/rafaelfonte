@@ -3,14 +3,12 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:id="@+id/info"
     android:weightSum="1">
 <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     android:gravity="center"/>
-<Chronometer android:textSize="35sp" android:text="Chronometer" android:onClick="onClick()" android:digits="HH:MM:SS:MMM" android:layout_height="wrap_content" android:id="@+id/chronometer1" android:layout_width="wrap_content" android:gravity="center"></Chronometer>
-
-<Button android:id="@+id/button1" android:text="@string/reset" android:layout_height="wrap_content" android:gravity="center|center_vertical|center_horizontal|clip_horizontal" android:layout_width="238dp"></Button>
 <Button android:id="@+id/button2" android:text="@string/newChrono" android:layout_height="wrap_content" android:layout_width="238dp"></Button>
 </LinearLayout>
