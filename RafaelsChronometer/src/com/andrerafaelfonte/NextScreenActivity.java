@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,12 @@ public class NextScreenActivity extends Activity {
         }        
 	}
 	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		//setContentView(R.layout.myLayout);
+	}
+	
 	// This method is called at button click because we assigned the name to the
 	// "On Click property" of the button
  	public void myClickHandler(View view) {
@@ -57,21 +64,9 @@ public class NextScreenActivity extends Activity {
 	{
 		int color = Color.BLACK;
 		
-		switch(index % 4)
+		switch(index % 2)
 		{
 			case 0:
-				color = Color.BLUE;
-				break;
-			case 1:
-				color = Color.RED;
-				break;
-			case 2:
-				color = Color.GREEN;
-				break;
-			case 3:
-				color = Color.MAGENTA;
-				break;
-			case 4:
 				color = Color.LTGRAY;
 				break;
 			default:

@@ -10,12 +10,26 @@
         android:layout_width="fill_parent"
         android:layout_height="210px">
 
-        <LinearLayout
+        <LinearLayout
             android:id="@+id/laps_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="50px"
-            android:orientation="vertical" >
-        </LinearLayout>
+            android:orientation="vertical">
+        </LinearLayout>        
+    </ScrollView>
+    
+    <ScrollView
+        android:id="@+id/ScrollView12"
+        android:layout_width="fill_parent"
+        android:layout_height="210px"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/laps_linear_layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="50px"
+            android:orientation="vertical">
+        </LinearLayout>        
     </ScrollView>
     <Button
         android:id="@+id/laps_start_stop_button"

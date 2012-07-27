@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="NextScreenActivity" android:screenOrientation="landscape">
+        <activity android:name="NextScreenActivity" android:screenOrientation="landscape" android:configChanges="orientation">
         </activity>
     </application>
 
