@@ -17,6 +17,7 @@ public class ChronometerItem {
 	boolean started = false;
 	Context context;
 	long test = 0;
+	long lap = 0;
 	
 	private EventListenerList listenerList;
 	
@@ -59,7 +60,10 @@ public class ChronometerItem {
         public void onClick(View v) {
         	
         	if(myChronometer.isRunning()) {
-	        	LapEvent evt = new LapEvent(this, myChronometer.getText().toString());
+        		String split = myChronometer.getStringFromTimeDifference(SystemClock.elapsedRealtime(), lap);
+        		lap = SystemClock.elapsedRealtime();
+        		
+	        	LapEvent evt = new LapEvent(this, myChronometer.getText().toString(), split);
 	        	fireLapEvent(evt);
         	}
         	
@@ -82,9 +86,15 @@ public class ChronometerItem {
 	public void startChronometer(){
 		myChronometer.setBase(SystemClock.elapsedRealtime()-elapsed);
 		myChronometer.start();
+		lap = myChronometer.getBase();
 	}
 	public void stopChronometer(){
 		elapsed = SystemClock.elapsedRealtime() - myChronometer.getBase();
-		myChronometer.stop();		
+		myChronometer.stop();	
+	}
+
+	public void resetChronometer() {
+		elapsed = 0;
+		myChronometer.setBase(SystemClock.elapsedRealtime());
 	}
 }

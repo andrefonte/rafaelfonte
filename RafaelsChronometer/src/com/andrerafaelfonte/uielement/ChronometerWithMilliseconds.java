@@ -98,7 +98,13 @@ public class ChronometerWithMilliseconds extends TextView {
     }
 
     private synchronized void updateText(long now) {
-        long timeElapsed = now - mBase;
+        String text = getStringFromTimeDifference(now, mBase);
+        
+        setText(text);
+    }
+
+    public String getStringFromTimeDifference(long now, long mBase2) {
+    	long timeElapsed = now - mBase2;
         
         DecimalFormat df = new DecimalFormat("00");
         
@@ -123,11 +129,11 @@ public class ChronometerWithMilliseconds extends TextView {
        	text += df.format(seconds) + ":";
        	String milliSec = String.format("%03d", milliseconds);
        	text += milliSec;//Integer.toString(milliseconds);
-        
-        setText(text);
-    }
+       	
+       	return text;
+	}
 
-    private void updateRunning() {
+	private void updateRunning() {
         boolean running = mVisible && mStarted;
         if (running != mRunning) {
             if (running) {

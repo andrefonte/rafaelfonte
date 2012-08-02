@@ -83,7 +83,6 @@ public class RafaelsChronometerActivity extends Activity {
  			int intValue = Integer.parseInt(text);
  			
  			myIntent.putExtra("numberOfAthletes", intValue);
- 			
             startActivityForResult(myIntent, 0);
  			
  			
